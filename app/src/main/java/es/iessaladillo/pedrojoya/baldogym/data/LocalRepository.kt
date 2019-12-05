@@ -103,6 +103,10 @@ object LocalRepository : Repository {
         }
     }
 
+    override fun getSession(idReceived: Long): TrainingSession {
+        return list.filter { x -> x.id==idReceived }.last()
+    }
+
     override fun quitSession(trainingSession: TrainingSession) {
         list.forEach {
             if (it.id==trainingSession.id){

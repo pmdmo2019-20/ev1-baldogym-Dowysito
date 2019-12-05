@@ -1,5 +1,6 @@
 package es.iessaladillo.pedrojoya.baldogym.ui.schedule
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.activity.viewModels
@@ -13,8 +14,12 @@ import es.iessaladillo.pedrojoya.baldogym.R
 import es.iessaladillo.pedrojoya.baldogym.data.LocalRepository
 import es.iessaladillo.pedrojoya.baldogym.data.entity.TrainingSession
 import es.iessaladillo.pedrojoya.baldogym.data.entity.WeekDay
+import es.iessaladillo.pedrojoya.baldogym.ui.trainingsession.TrainingSessionActivity
 import kotlinx.android.synthetic.main.schedule_activity.*
 import kotlinx.android.synthetic.main.schedule_activity_item.*
+
+
+const val EXTRA_ID = "ID"
 
 class ScheduleActivity : AppCompatActivity() {
 
@@ -23,6 +28,7 @@ class ScheduleActivity : AppCompatActivity() {
     private val listAdapter: ScheduleActivityAdapter = ScheduleActivityAdapter().also {
         it.setOnItemClickListener {position ->
             val trainingSession:TrainingSession = it.getItem(position)
+            navigatetoDetail(trainingSession)
         }
         it.setOnButtonClickListener {position ->
             val trainingSession:TrainingSession = it.getItem(position)
@@ -35,9 +41,10 @@ class ScheduleActivity : AppCompatActivity() {
 
         }
     }
-    private val localRepository = LocalRepository
-    private val viewModel: ScheduleActivityViewModel by viewModels { ScheduleActivityViewModelFactory(localRepository,application) }
 
+    private val localRepository = LocalRepository
+
+    private val viewModel: ScheduleActivityViewModel by viewModels { ScheduleActivityViewModelFactory(localRepository,application) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.schedule_activity)
@@ -68,7 +75,6 @@ class ScheduleActivity : AppCompatActivity() {
         setUpdaybar()
     }
 
-
     private fun setUpdaybar() {
         lblMonday.setOnClickListener { viewModel.changeDay(WeekDay.MONDAY) }
         lblTuesday.setOnClickListener { viewModel.changeDay(WeekDay.TUESDAY) }
@@ -78,6 +84,7 @@ class ScheduleActivity : AppCompatActivity() {
         lblSaturday.setOnClickListener { viewModel.changeDay(WeekDay.SATURDAY) }
         lblSunday.setOnClickListener { viewModel.changeDay(WeekDay.SUNDAY) }
     }
+
 
     private fun currentday(day: WeekDay) {
         when(day){
@@ -134,6 +141,11 @@ class ScheduleActivity : AppCompatActivity() {
             listAdapter.submitList(tasks)
             listAdapter.notifyDataSetChanged()
         }
+    }
+
+    private fun navigatetoDetail(trainingSession: TrainingSession) {
+        val intent = TrainingSessionActivity.newIntent(this,trainingSession.id)
+        startActivity(intent)
     }
 
 }

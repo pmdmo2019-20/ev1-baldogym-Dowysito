@@ -12,5 +12,6 @@ interface Repository {
     fun querydayList(day: WeekDay): List<TrainingSession>
     fun joinSession(trainingSession: TrainingSession)
     fun quitSession(trainingSession: TrainingSession)
+    fun getSession(idReceived: Long): TrainingSession
 
 }
