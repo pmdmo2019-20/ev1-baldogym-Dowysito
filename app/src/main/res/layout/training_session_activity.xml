@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/img_sessionDetail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:adjustViewBounds="true"
         android:paddingBottom="@dimen/session_root_padding"
         android:scaleType="centerCrop"
@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_root_padding"
         android:text="@string/app_name"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"

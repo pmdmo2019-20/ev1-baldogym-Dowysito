@@ -98,6 +98,7 @@
         android:id="@+id/lblCurrentDay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
         android:text="CurrentDay"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
