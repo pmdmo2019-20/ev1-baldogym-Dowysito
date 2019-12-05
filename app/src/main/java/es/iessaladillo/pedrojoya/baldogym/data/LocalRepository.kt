@@ -6,10 +6,10 @@ import es.iessaladillo.pedrojoya.baldogym.data.entity.WeekDay
 import java.util.concurrent.ThreadLocalRandom
 
 object LocalRepository : Repository {
-
     // TODO:
+    private var list:MutableList<TrainingSession> = createWeekSchedule().toMutableList()
 
-    private fun createWeekSchedule(): List<TrainingSession> {
+    override fun createWeekSchedule(): List<TrainingSession> {
 
         data class SessionType(val name: String, val photoResId: Int, val description: String)
 
@@ -89,6 +89,23 @@ object LocalRepository : Repository {
             }
         }
         return trainingSessions
+    }
+
+    override fun querydayList(day: WeekDay): List<TrainingSession> {
+        return list.filter { x -> x.weekDay==day }
+    }
+
+    override fun joinSession(trainingSession: TrainingSession) {
+        var newlist:MutableList<TrainingSession> = mutableListOf()
+        list.forEach {
+            if (it.id==trainingSession.id){
+                list.add(it.copy(userJoined = true))
+            }
+            else{
+                list.add(it)
+            }
+        }
+        list = newlist
     }
 
 }

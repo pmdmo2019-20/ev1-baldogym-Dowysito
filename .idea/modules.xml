@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaldoGym.iml" filepath="$PROJECT_DIR$/BaldoGym.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ev1-baldogym-Dowysito-BaldoGym.iml" filepath="$PROJECT_DIR$/ev1-baldogym-Dowysito-BaldoGym.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/ev1-baldogym-Dowysito-app.iml" filepath="$PROJECT_DIR$/app/ev1-baldogym-Dowysito-app.iml" />
     </modules>
   </component>
 </project>

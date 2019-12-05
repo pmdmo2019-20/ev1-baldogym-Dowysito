@@ -9,4 +9,108 @@
 
     <!-- TODO -->
 
+
+    <TextView
+        android:id="@+id/lblMonday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_mon"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblTuesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblTuesday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_tue"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblWednesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblMonday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblWednesday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_wed"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblThursday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblTuesday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblThursday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_thu"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblFriday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblWednesday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblFriday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_fri"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblSaturday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblThursday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblSaturday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_sat"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toStartOf="@+id/lblSunday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblFriday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblSunday"
+        style="@style/weekbar_element"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_sun"
+        android:textColor="@color/white_semi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblSaturday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblCurrentDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CurrentDay"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblThursday" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lstSchedule"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCurrentDay"
+        tools:listitem="@layout/schedule_activity_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

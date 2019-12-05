@@ -2,12 +2,88 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/rootItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/schedule_item_padding"
-    tools:context=".ui.schedule.ScheduleActivity">
+    android:animateLayoutChanges="true">
 
     <!-- TODO -->
+
+
+    <TextView
+        android:id="@+id/lbl_session_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_root_padding"
+        android:text="Hour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_Session"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:layout_marginBottom="@dimen/session_root_padding"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/lbl_session_hour"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lbl_session_hour"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_session_hour"
+        app:srcCompat="@drawable/bodyattack" />
+
+    <Button
+        android:id="@+id/btn_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/schedule_item_padding"
+        android:background="@drawable/schedule_btn_join_background"
+        android:text="@string/schedule_item_join"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_Session" />
+
+    <TextView
+        android:id="@+id/lblParticipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='""'
+        app:layout_constraintEnd_toEndOf="@+id/btn_join"
+        app:layout_constraintStart_toStartOf="@+id/btn_join"
+        app:layout_constraintTop_toBottomOf="@+id/btn_join" />
+
+    <TextView
+        android:id="@+id/lbl_sessionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:text="sessionName"
+        app:layout_constraintBottom_toTopOf="@+id/lbl_sessionTrainer"
+        app:layout_constraintStart_toEndOf="@+id/img_Session"
+        app:layout_constraintTop_toTopOf="@+id/img_Session" />
+
+    <TextView
+        android:id="@+id/lbl_sessionTrainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Trainer"
+        app:layout_constraintBottom_toTopOf="@+id/lbl_sessionPlace"
+        app:layout_constraintStart_toEndOf="@+id/img_Session"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sessionName" />
+
+    <TextView
+        android:id="@+id/lbl_sessionPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/schedule_item_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Place"
+        app:layout_constraintBottom_toBottomOf="@+id/img_Session"
+        app:layout_constraintStart_toEndOf="@+id/img_Session"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sessionTrainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

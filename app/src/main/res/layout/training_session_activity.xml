@@ -8,4 +8,118 @@
 
     <!-- TODO -->
 
+    <ImageView
+        android:id="@+id/img_sessionDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="@dimen/session_root_padding"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bodyattack" />
+
+    <TextView
+        android:id="@+id/lbl_detailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sessionDetail" />
+
+    <TextView
+        android:id="@+id/lbl_detailTrainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Trainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_detailName" />
+
+    <TextView
+        android:id="@+id/lbl_detailDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Day"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_detailTrainer" />
+
+    <TextView
+        android:id="@+id/lbl_detailHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Hour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_detailDay" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:layout_marginEnd="@dimen/session_root_padding"
+        android:background="@color/darkGrey"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_detailPlace"></View>
+
+    <TextView
+        android:id="@+id/lbl_detailPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:text="Place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_detailHour" />
+
+    <TextView
+        android:id="@+id/lbl_detailInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/session_root_padding"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:layout_marginEnd="@dimen/session_root_padding"
+        android:text="info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/lbl_detailParticipants"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:paddingLeft="@dimen/schedule_weekbar_horizontalPadding"
+        android:paddingTop="@dimen/schedule_weekbar_verticalPadding"
+        android:paddingBottom="@dimen/schedule_weekbar_verticalPadding"
+        android:text="Participants"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_detailJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/session_vertical_margin"
+        android:layout_marginEnd="@dimen/session_root_padding"
+        android:layout_marginBottom="@dimen/session_vertical_margin"
+        android:background="@drawable/session_btn_join_background"
+        android:text="@string/schedule_item_join"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_detailParticipants"
+        app:layout_constraintEnd_toEndOf="@+id/lbl_detailParticipants"
+        app:layout_constraintTop_toTopOf="@+id/lbl_detailParticipants" />
 </androidx.constraintlayout.widget.ConstraintLayout>
