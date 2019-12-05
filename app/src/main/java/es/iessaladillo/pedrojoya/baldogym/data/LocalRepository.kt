@@ -92,20 +92,23 @@ object LocalRepository : Repository {
     }
 
     override fun querydayList(day: WeekDay): List<TrainingSession> {
-        return list.filter { x -> x.weekDay==day }
+        return list.filter { x -> x.weekDay==day }.sortedBy { it.time.substring(0,2).toInt() }
     }
 
     override fun joinSession(trainingSession: TrainingSession) {
-        var newlist:MutableList<TrainingSession> = mutableListOf()
         list.forEach {
             if (it.id==trainingSession.id){
-                list.add(it.copy(userJoined = true))
-            }
-            else{
-                list.add(it)
+                it.userJoined = true
             }
         }
-        list = newlist
+    }
+
+    override fun quitSession(trainingSession: TrainingSession) {
+        list.forEach {
+            if (it.id==trainingSession.id){
+                it.userJoined = false
+            }
+        }
     }
 
 }

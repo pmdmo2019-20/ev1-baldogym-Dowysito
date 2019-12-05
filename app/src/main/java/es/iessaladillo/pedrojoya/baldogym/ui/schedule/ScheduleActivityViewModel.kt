@@ -34,6 +34,11 @@ class ScheduleActivityViewModel(private val repository: Repository, private val 
         querylist()
     }
 
+    fun quitSession(trainingSession: TrainingSession) {
+        repository.quitSession(trainingSession)
+        querylist()
+    }
+
     private fun querylist() {
         _sessions.value=repository.querydayList(_currentDayOptionSelected.value!!)
     }

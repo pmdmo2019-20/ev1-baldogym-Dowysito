@@ -26,7 +26,13 @@ class ScheduleActivity : AppCompatActivity() {
         }
         it.setOnButtonClickListener {position ->
             val trainingSession:TrainingSession = it.getItem(position)
-            viewModel.joinSession(trainingSession)
+            if (!trainingSession.userJoined){
+                viewModel.joinSession(trainingSession)
+            }
+            else{
+                viewModel.quitSession(trainingSession)
+            }
+
         }
     }
     private val localRepository = LocalRepository

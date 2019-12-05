@@ -72,8 +72,12 @@ class ScheduleActivityAdapter : RecyclerView.Adapter<ScheduleActivityAdapter.Vie
 
                 if (!userJoined){
                     containerView.lblParticipants.text = lblParticipants.context.resources.getQuantityString(R.plurals.schedule_item_participants,participants,participants)
+                    btn_join.setTextColor(btn_join.context.resources.getColor(R.color.black))
+                    btn_join.background= btn_join.context.getDrawable(R.drawable.schedule_btn_join_background)
+                    btn_join.text=btn_join.context.getString(R.string.schedule_item_join)
                 }
                 else{
+                    btn_join.text=btn_join.context.getString(R.string.schedule_item_quit)
                     btn_join.background= btn_join.context.getDrawable(R.drawable.schedule_btn_quit_background)
                     btn_join.setTextColor(btn_join.context.resources.getColor(R.color.white))
                     containerView.lblParticipants.text = lblParticipants.context.resources.getQuantityString(R.plurals.schedule_item_participants,participants+1, participants+1)

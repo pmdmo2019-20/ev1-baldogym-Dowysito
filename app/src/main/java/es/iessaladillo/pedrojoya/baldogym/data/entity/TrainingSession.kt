@@ -12,5 +12,5 @@ data class TrainingSession(
     val trainer: String,
     val room: String,
     val participants: Int,
-    val userJoined: Boolean
+    var userJoined: Boolean
 )
