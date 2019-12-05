@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="schedule_weekbar_horizontalPadding">8dp</dimen>
+    <dimen name="schedule_weekbar_verticalPadding">16dp</dimen>
+
+    <dimen name="schedule_daybar_verticalPadding">8dp</dimen>
+
+    <dimen name="schedule_lblEmptyView_drawablePadding">16dp</dimen>
+
+    <dimen name="schedule_item_padding">16dp</dimen>
+
+    <dimen name="session_root_padding">16dp</dimen>
+    <dimen name="session_vertical_margin">8dp</dimen>
+</resources>

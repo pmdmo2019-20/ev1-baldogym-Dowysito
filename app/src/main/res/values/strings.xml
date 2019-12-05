@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">BaldoGym</string>
+
+    <!-- Nombres largos de los días de la semana -->
+    <string name="schedule_monday">Monday</string>
+    <string name="schedule_tuesday">Tuesday</string>
+    <string name="schedule_wednesday">Wednesday</string>
+    <string name="schedule_thursday">Thursday</string>
+    <string name="schedule_friday">Friday</string>
+    <string name="schedule_saturday">Saturday</string>
+    <string name="schedule_sunday">Sunday</string>
+
+    <!-- Nombres cortos de los días de la semana -->
+    <string name="schedule_mon">Mon.</string>
+    <string name="schedule_tue">Tue.</string>
+    <string name="schedule_wed">Wed.</string>
+    <string name="schedule_thu">Thu.</string>
+    <string name="schedule_fri">Fri.</string>
+    <string name="schedule_sat">Sat.</string>
+    <string name="schedule_sun">Sun.</string>
+
+    <!-- Horario -->
+    <string name="schedule_lblEmptyView">No training sessions found</string>
+
+    <!-- Ítem de horario -->
+    <string name="schedule_item_join">Join</string>
+    <string name="schedule_item_quit">Quit</string>
+    <plurals name="schedule_item_participants">
+        <item quantity="one">%d participant</item>
+        <item quantity="other">%d participants</item>
+    </plurals>
+    <string name="schedule_item_imgPhoto">Photo of the session</string>
+
+    <!-- Sesión -->
+    <string name="session_not_found">Training session not found</string>
+    <string name="session_imgPhoto">Training session photo</string>
+
+</resources>
